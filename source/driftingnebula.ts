@@ -7,8 +7,10 @@ import {execa} from 'execa';
 import {Crop} from './gegl/exports.js';
 import Project from './project.js';
 
+import d2022_03_06 from './2022-03-06.js';
+
 async function main(): Promise<void> {
-  const projects: Project[] = [];
+  const projects: Project[] = [d2022_03_06];
 
   for (const {name, operations, resolution} of projects) {
     const dataStart = performance.now();
