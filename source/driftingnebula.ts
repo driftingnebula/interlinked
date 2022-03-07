@@ -13,6 +13,8 @@ import d2022_03_07 from './2022-03-07.js';
 
 async function main(): Promise<void> {
   const noRender = process.argv.includes('--no-render');
+  const includeDefaults = process.argv.includes('--include-defaults');
+
   const projects: Project[] = [d2022_03_06, d2022_03_07];
 
   for (const {name, operations, resolution} of projects) {
@@ -27,9 +29,9 @@ async function main(): Promise<void> {
     console.log(`* ${operations.length} operations`);
 
     const graph = operations.flatMap((operation) => {
-      const graph = operation.graph();
+      const graph = operation.graph(includeDefaults);
       if (operation.appendCrop) {
-        graph.push(...new Crop({height, width}).graph());
+        graph.push(...new Crop({height, width}).graph(includeDefaults));
       }
 
       return graph;
