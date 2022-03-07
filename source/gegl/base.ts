@@ -1,4 +1,6 @@
 export abstract class BaseOperation<P> {
+  public abstract get default(): P;
+
   public parameters: P;
 
   /**

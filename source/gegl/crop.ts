@@ -17,6 +17,10 @@ export class Crop extends BaseOperation<CropParameters> {
     y: 0,
   };
 
+  public get default() {
+    return Crop.default;
+  }
+
   public appendCrop = false;
   public name = 'gegl:crop';
 

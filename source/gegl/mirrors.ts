@@ -33,6 +33,10 @@ export class Mirrors extends BaseOperation<MirrorsParameters> {
     warp: true,
   };
 
+  public get default() {
+    return Mirrors.default;
+  }
+
   public appendCrop = false;
   public name = 'gegl:mirrors';
 

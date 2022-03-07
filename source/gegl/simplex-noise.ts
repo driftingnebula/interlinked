@@ -13,6 +13,10 @@ export class SimplexNoise extends BaseOperation<SimplexNoiseParameters> {
     seed: 1,
   };
 
+  public get default() {
+    return SimplexNoise.default;
+  }
+
   public appendCrop = true;
   public name = 'gegl:simplex-noise';
 

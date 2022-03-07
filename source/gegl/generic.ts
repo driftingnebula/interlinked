@@ -3,6 +3,10 @@ import {BaseOperation} from './base.js';
 export type GenericParameters = Record<string, number | string>;
 
 export class Generic extends BaseOperation<GenericParameters> {
+  public get default() {
+    return {};
+  }
+
   public appendCrop: boolean;
   public name: string;
 

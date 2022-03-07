@@ -45,6 +45,10 @@ export class Newsprint extends BaseOperation<NewsprintParameters> {
     turbulence: 0,
   };
 
+  public get default() {
+    return Newsprint.default;
+  }
+
   public appendCrop = false;
   public name = 'gegl:newsprint';
 
