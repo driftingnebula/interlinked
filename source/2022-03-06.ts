@@ -1,4 +1,5 @@
 import {Generic, SimplexNoise} from './gegl/exports.js';
+import Project from './project.js';
 
 const [width, height] = [1920, 1080];
 

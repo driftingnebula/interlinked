@@ -5,6 +5,7 @@ import {performance} from 'node:perf_hooks';
 import {execa} from 'execa';
 
 import {Crop} from './gegl/exports.js';
+import Project from './project.js';
 
 async function main(): Promise<void> {
   const projects: Project[] = [];
