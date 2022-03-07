@@ -23,7 +23,7 @@ export abstract class BaseOperation<P> {
 
     for (const [key, value] of Object.entries(this.parameters)) {
       if (
-        includeDefaults &&
+        !includeDefaults &&
         key in defaults &&
         (defaults as Record<string, any>)[key] === value
       ) {
