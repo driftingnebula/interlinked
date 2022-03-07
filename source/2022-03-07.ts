@@ -1,4 +1,4 @@
-import {Crop, Generic} from './gegl/exports.js';
+import {Crop, Generic, Mirrors} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -30,7 +30,7 @@ const project: Project = {
       clamp: 'true',
       samplerType: 'cubic',
     }),
-    new Generic('gegl:mirrors', {
+    new Mirrors({
       oX: 1,
       oY: 0.353,
       nSegs: 2,
@@ -42,7 +42,7 @@ const project: Project = {
       size: 32,
       smoothness: 1,
     }),
-    new Generic('gegl:mirrors', {
+    new Mirrors({
       oX: 0.01,
       oY: 0.01,
       nSegs: 5,
