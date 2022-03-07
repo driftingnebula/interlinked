@@ -17,10 +17,19 @@ export abstract class BaseOperation<P> {
     this.parameters = parameters;
   }
 
-  public graph(): string[] {
+  public graph(includeDefaults = false): string[] {
+    const defaults = this.default;
     const graph: string[] = [this.name];
 
     for (const [key, value] of Object.entries(this.parameters)) {
+      if (
+        includeDefaults &&
+        key in defaults &&
+        (defaults as Record<string, any>)[key] === value
+      ) {
+        continue;
+      }
+
       const kebabCasedKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
       graph.push(`${kebabCasedKey}=${value as string}`);
     }
