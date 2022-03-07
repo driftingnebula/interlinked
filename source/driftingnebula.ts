@@ -8,9 +8,10 @@ import {Crop} from './gegl/exports.js';
 import Project from './project.js';
 
 import d2022_03_06 from './2022-03-06.js';
+import d2022_03_07 from './2022-03-07.js';
 
 async function main(): Promise<void> {
-  const projects: Project[] = [d2022_03_06];
+  const projects: Project[] = [d2022_03_06, d2022_03_07];
 
   for (const {name, operations, resolution} of projects) {
     const dataStart = performance.now();
