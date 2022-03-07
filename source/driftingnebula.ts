@@ -1,6 +1,7 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import {performance} from 'node:perf_hooks';
+import process from 'node:process';
 
 import {execa} from 'execa';
 
@@ -11,6 +12,7 @@ import d2022_03_06 from './2022-03-06.js';
 import d2022_03_07 from './2022-03-07.js';
 
 async function main(): Promise<void> {
+  const noRender = process.argv.includes('--no-render');
   const projects: Project[] = [d2022_03_06, d2022_03_07];
 
   for (const {name, operations, resolution} of projects) {
@@ -46,8 +48,17 @@ async function main(): Promise<void> {
       prettyGraph.join('').trimStart(),
     );
 
-    console.log(`* Writing ${outputFile}`);
-    await execa('gegl', ['-o', path.join(baseDir, outputFile), '--', ...graph]);
+    if (noRender) {
+      console.log(`* Skipped ${outputFile}`);
+    } else {
+      console.log(`* Writing ${outputFile}`);
+      await execa('gegl', [
+        '-o',
+        path.join(baseDir, outputFile),
+        '--',
+        ...graph,
+      ]);
+    }
 
     const time = (performance.now() - dataStart).toFixed(2);
     console.log(`* Generated in ${time}ms`);
