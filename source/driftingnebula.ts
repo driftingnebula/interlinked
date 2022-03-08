@@ -10,12 +10,13 @@ import Project from './project.js';
 
 import d2022_03_06 from './2022-03-06.js';
 import d2022_03_07 from './2022-03-07.js';
+import d2022_03_08 from './2022-03-08.js';
 
 async function main(): Promise<void> {
   const noRender = process.argv.includes('--no-render');
   const includeDefaults = process.argv.includes('--include-defaults');
 
-  const projects: Project[] = [d2022_03_06, d2022_03_07];
+  const projects: Project[] = [d2022_03_06, d2022_03_07, d2022_03_08];
 
   for (const {name, operations, resolution} of projects) {
     const dataStart = performance.now();
