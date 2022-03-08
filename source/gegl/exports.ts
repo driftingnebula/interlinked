@@ -1,5 +1,6 @@
 export * from './base.js';
 export * from './crop.js';
+export * from './focus-blur.js';
 export * from './generic.js';
 export * from './mirrors.js';
 export * from './newsprint.js';
