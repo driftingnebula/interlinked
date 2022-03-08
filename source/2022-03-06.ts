@@ -1,4 +1,10 @@
-import {Generic, Mirrors, Newsprint, SimplexNoise} from './gegl/exports.js';
+import {
+  Generic,
+  Mirrors,
+  Newsprint,
+  SimplexNoise,
+  Softglow,
+} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -20,7 +26,7 @@ const project: Project = {
       angle4: 0,
     }),
     new Mirrors(),
-    new Generic('gegl:softglow'),
+    new Softglow(),
     new Newsprint(),
     new Generic('gegl:stereographic-projection', {tilt: 123}),
     new Generic('gegl:focus-blur', {
