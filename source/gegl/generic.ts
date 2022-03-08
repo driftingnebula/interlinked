@@ -1,6 +1,6 @@
 import {BaseOperation} from './base.js';
 
-export type GenericParameters = Record<string, number | string>;
+export type GenericParameters = Record<string, number | string | boolean>;
 
 export class Generic extends BaseOperation<GenericParameters> {
   public get default() {
