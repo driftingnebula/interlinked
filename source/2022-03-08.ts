@@ -10,6 +10,7 @@ import Project from './project.js';
 const [width, height] = [1920, 1080];
 
 const project: Project = {
+  createInputImage: false,
   name: '2022-03-08',
   operations: [
     new Generic('gegl:diffraction-patterns', {

@@ -11,6 +11,7 @@ import Project from './project.js';
 const [width, height] = [1920, 1080];
 
 const project: Project = {
+  createInputImage: false,
   name: '2022-03-06',
   operations: [
     new SimplexNoise({scale: 4, seed: 2_071_140_406}),

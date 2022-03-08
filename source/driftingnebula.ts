@@ -18,7 +18,7 @@ async function main(): Promise<void> {
 
   const projects: Project[] = [d2022_03_06, d2022_03_07, d2022_03_08];
 
-  for (const {name, operations, resolution} of projects) {
+  for (const {createInputImage, name, operations, resolution} of projects) {
     const dataStart = performance.now();
     const {width, height} = resolution;
 
@@ -55,10 +55,21 @@ async function main(): Promise<void> {
     if (noRender) {
       console.log(`* Skipped ${outputFile}`);
     } else {
+      const fullOutputFile = path.join(baseDir, outputFile);
+      if (createInputImage) {
+        await execa('magick', [
+          '-size',
+          `${width}x${height}`,
+          'xc:white',
+          fullOutputFile,
+        ]);
+      }
+
       console.log(`* Writing ${outputFile}`);
       await execa('gegl', [
+        ...(createInputImage ? ['-i', fullOutputFile] : []),
         '-o',
-        path.join(baseDir, outputFile),
+        fullOutputFile,
         '--',
         ...graph,
       ]);
@@ -66,7 +77,7 @@ async function main(): Promise<void> {
       console.log(`* Writing ${compressedFile}`);
       await execa('magick', [
         'convert',
-        path.join(baseDir, outputFile),
+        fullOutputFile,
         '-quality',
         '92',
         path.join(baseDir, compressedFile),
