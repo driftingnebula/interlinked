@@ -1,6 +1,7 @@
 import {
   Crop,
   Generic,
+  FocusBlur,
   Newsprint,
   StereographicProjection,
 } from './gegl/exports.js';
@@ -22,7 +23,7 @@ const project: Project = {
       colorModel: 'cmyk',
       period: 4,
     }),
-    new Generic('gegl:focus-blur', {
+    new FocusBlur({
       blurRadius: 9.72,
       blurType: 'lens',
       focus: 0,

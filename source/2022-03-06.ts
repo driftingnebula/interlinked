@@ -1,5 +1,5 @@
 import {
-  Generic,
+  FocusBlur,
   Mirrors,
   Newsprint,
   SimplexNoise,
@@ -30,7 +30,7 @@ const project: Project = {
     new Softglow(),
     new Newsprint(),
     new StereographicProjection({tilt: 123}),
-    new Generic('gegl:focus-blur', {
+    new FocusBlur({
       blurType: 'gaussian',
       blurRadius: 11.5,
       radius: 0.9,
@@ -48,7 +48,7 @@ const project: Project = {
       period4: 200,
       angle4: 55,
     }),
-    new Generic('gegl:focus-blur', {
+    new FocusBlur({
       blurType: 'gaussian',
       blurRadius: 11.5,
       radius: 0.9,
