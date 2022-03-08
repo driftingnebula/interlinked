@@ -44,6 +44,7 @@ async function main(): Promise<void> {
 
     const graphFile = `${name}.txt`;
     const outputFile = `${name}.png`;
+    const compressedFile = `${outputFile.slice(0, -4)}.jpeg`;
 
     console.log(`* Writing ${graphFile}`);
     await fsp.writeFile(
@@ -60,6 +61,15 @@ async function main(): Promise<void> {
         path.join(baseDir, outputFile),
         '--',
         ...graph,
+      ]);
+
+      console.log(`* Writing ${compressedFile}`);
+      await execa('magick', [
+        'convert',
+        path.join(baseDir, outputFile),
+        '-quality',
+        '92',
+        path.join(baseDir, compressedFile),
       ]);
     }
 
