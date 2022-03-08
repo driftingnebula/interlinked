@@ -5,3 +5,4 @@ export * from './mirrors.js';
 export * from './newsprint.js';
 export * from './simplex-noise.js';
 export * from './softglow.js';
+export * from './stereographic-projection.js';
