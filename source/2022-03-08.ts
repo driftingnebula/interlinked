@@ -1,4 +1,9 @@
-import {Crop, Generic, Newsprint} from './gegl/exports.js';
+import {
+  Crop,
+  Generic,
+  Newsprint,
+  StereographicProjection,
+} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -12,7 +17,7 @@ const project: Project = {
     }),
     new Crop({height, width}),
     new Generic('gegl:tile-seamless'),
-    new Generic('gegl:stereographic-projection'),
+    new StereographicProjection(),
     new Newsprint({
       colorModel: 'cmyk',
       period: 4,

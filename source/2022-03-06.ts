@@ -4,6 +4,7 @@ import {
   Newsprint,
   SimplexNoise,
   Softglow,
+  StereographicProjection,
 } from './gegl/exports.js';
 import Project from './project.js';
 
@@ -28,7 +29,7 @@ const project: Project = {
     new Mirrors(),
     new Softglow(),
     new Newsprint(),
-    new Generic('gegl:stereographic-projection', {tilt: 123}),
+    new StereographicProjection({tilt: 123}),
     new Generic('gegl:focus-blur', {
       blurType: 'gaussian',
       blurRadius: 11.5,
