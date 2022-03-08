@@ -1,4 +1,4 @@
-import {Crop, Generic, Mirrors} from './gegl/exports.js';
+import {Crop, Generic, Mirrors, Plasma} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -6,7 +6,7 @@ const [width, height] = [1920, 1080];
 const project: Project = {
   name: '2022-03-07',
   operations: [
-    new Generic('gegl:plasma', {
+    new Plasma({
       height,
       seed: 2_000_111_903,
       turbulence: 1,
