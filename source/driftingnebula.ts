@@ -18,7 +18,13 @@ async function main(): Promise<void> {
 
   const projects: Project[] = [d2022_03_06, d2022_03_07, d2022_03_08];
 
-  for (const {createInputImage, name, operations, resolution} of projects) {
+  for (const {
+    createInputImage,
+    name,
+    operations,
+    resolution,
+    resetAlpha,
+  } of projects) {
     const dataStart = performance.now();
     const {width, height} = resolution;
 
@@ -73,6 +79,15 @@ async function main(): Promise<void> {
         '--',
         ...graph,
       ]);
+
+      if (resetAlpha) {
+        await execa('convert', [
+          fullOutputFile,
+          '-alpha',
+          'Off',
+          fullOutputFile,
+        ]);
+      }
 
       console.log(`* Writing ${compressedFile}`);
       await execa('magick', [

@@ -33,6 +33,7 @@ const project: Project = {
       shape: 'circle',
     }),
   ],
+  resetAlpha: false,
   resolution: {
     width,
     height,

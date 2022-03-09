@@ -51,6 +51,7 @@ const project: Project = {
     }),
     new Generic('gegl:median-blur'),
   ],
+  resetAlpha: false,
   resolution: {
     width,
     height,

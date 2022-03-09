@@ -56,6 +56,7 @@ const project: Project = {
       midpoint: 0.6,
     }),
   ],
+  resetAlpha: false,
   resolution: {
     width,
     height,
