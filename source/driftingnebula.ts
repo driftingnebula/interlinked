@@ -23,6 +23,7 @@ async function main(): Promise<void> {
     {
       flags: {
         filter: {
+          default: '',
           type: 'string',
         },
         includeDefaults: {
@@ -46,7 +47,7 @@ async function main(): Promise<void> {
     d2022_03_07,
     d2022_03_08,
     d2022_03_09,
-  ].filter((project) => project.name.startsWith(cli.flags.filter ?? ''));
+  ].filter((project) => project.name.startsWith(cli.flags.filter));
 
   for (const {
     createInputImage,
