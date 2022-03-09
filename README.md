@@ -33,3 +33,8 @@ pnpm start -- --include-defaults
 # Lint the code and run tests.
 pnpm test
 ```
+
+## License
+
+* Code: [GPL-3.0-or-later](LICENSE)
+* Images: [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)
