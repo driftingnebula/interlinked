@@ -1,9 +1,9 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import {performance} from 'node:perf_hooks';
-import process from 'node:process';
 
 import {execa} from 'execa';
+import meow from 'meow';
 
 import {Crop} from './gegl/exports.js';
 import Project from './project.js';
@@ -14,8 +14,29 @@ import d2022_03_08 from './2022-03-08.js';
 import d2022_03_09 from './2022-03-09.js';
 
 async function main(): Promise<void> {
-  const noRender = process.argv.includes('--no-render');
-  const includeDefaults = process.argv.includes('--include-defaults');
+  const cli = meow(
+    `
+    Options
+      --include-defaults Include default GEGL operation parameters.
+      --no-render        Don't render any images.
+    `,
+    {
+      flags: {
+        includeDefaults: {
+          default: false,
+          type: 'boolean',
+        },
+        render: {
+          default: true,
+          type: 'boolean',
+        },
+      },
+      importMeta: import.meta,
+    },
+  );
+
+  const includeDefaults = cli.flags.includeDefaults;
+  const noRender = !cli.flags.render;
 
   const projects: Project[] = [
     d2022_03_06,
