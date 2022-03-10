@@ -4,6 +4,7 @@ export * from './cell-noise.js';
 export * from './crop.js';
 export * from './focus-blur.js';
 export * from './generic.js';
+export * from './median-blur.js';
 export * from './mirrors.js';
 export * from './mosaic.js';
 export * from './newsprint.js';
