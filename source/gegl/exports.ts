@@ -2,6 +2,7 @@ export * from './base.js';
 export * from './cartoon.js';
 export * from './cell-noise.js';
 export * from './crop.js';
+export * from './diffraction-patterns.js';
 export * from './focus-blur.js';
 export * from './generic.js';
 export * from './median-blur.js';
