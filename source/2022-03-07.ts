@@ -1,4 +1,13 @@
-import {Crop, Generic, Mirrors, Plasma} from './gegl/exports.js';
+import {
+  Cartoon,
+  Crop,
+  MedianBlur,
+  Mirrors,
+  Mosaic,
+  Plasma,
+  Waterpixels,
+  Waves,
+} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -13,22 +22,22 @@ const project: Project = {
       turbulence: 1,
       width,
     }),
-    new Generic('gegl:mosaic', {
+    new Mosaic({
       colorVariation: 1,
       tileHeight: 5,
       tileNeatness: 1,
       tileSize: 116.53,
-      tileSurface: 'true',
+      tileSurface: true,
       tileType: 'triangles',
     }),
-    new Generic('gegl:waves', {
+    new Waves({
       amplitude: 2.9,
-      clamp: 'true',
+      clamp: true,
       samplerType: 'cubic',
     }),
-    new Generic('gegl:waves', {
+    new Waves({
       amplitude: 17.3,
-      clamp: 'true',
+      clamp: true,
       samplerType: 'cubic',
     }),
     new Mirrors({
@@ -36,9 +45,9 @@ const project: Project = {
       oY: 0.353,
       nSegs: 2,
     }),
-    new Generic('gegl:cartoon'),
+    new Cartoon(),
     new Crop({height, width}),
-    new Generic('gegl:waterpixels', {
+    new Waterpixels({
       fill: 'average',
       size: 32,
       smoothness: 1,
@@ -49,7 +58,7 @@ const project: Project = {
       nSegs: 5,
       rAngle: 342,
     }),
-    new Generic('gegl:median-blur'),
+    new MedianBlur(),
   ],
   resetAlpha: false,
   resolution: {

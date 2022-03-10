@@ -1,4 +1,4 @@
-import {Crop, Generic, Newsprint} from './gegl/exports.js';
+import {CellNoise, Crop, Generic, Newsprint, Waves} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [3840, 2160];
@@ -7,7 +7,7 @@ const project: Project = {
   createInputImage: false,
   name: '2022-03-10',
   operations: [
-    new Generic('gegl:cell-noise', {
+    new CellNoise({
       scale: 0.5,
       seed: 2_762_328_325,
     }),
@@ -22,7 +22,7 @@ const project: Project = {
       period4: 135.1,
       turbulence: 0.454,
     }),
-    new Generic('gegl:waves', {
+    new Waves({
       amplitude: 67.6,
       clamp: true,
       period: 514.8,

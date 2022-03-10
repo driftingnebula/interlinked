@@ -1,4 +1,14 @@
-import {Crop, FocusBlur, Generic, Mirrors, Newsprint} from './gegl/exports.js';
+import {
+  Crop,
+  FocusBlur,
+  Generic,
+  MedianBlur,
+  Mirrors,
+  Newsprint,
+  TileSeamless,
+  Waterpixels,
+  Waves,
+} from './gegl/exports.js';
 import Project from './project.js';
 
 const [width, height] = [1920, 1080];
@@ -9,21 +19,21 @@ const project: Project = {
   operations: [
     new Generic('gegl:maze'),
     new Generic('gegl:tile-glass'),
-    new Generic('gegl:waterpixels'),
+    new Waterpixels(),
     new Newsprint({
       angle2: -55.4,
       angle3: 60.77,
       angle4: 103.55,
       colorModel: 'rgb',
     }),
-    new Generic('gegl:waves', {
+    new Waves({
       amplitude: 5.9,
       clamp: true,
     }),
     new Crop({height, width}),
     new Generic('gegl:oilify'),
-    new Generic('gegl:tile-seamless'),
-    new Generic('gegl:median-blur', {
+    new TileSeamless(),
+    new MedianBlur({
       percentile: 2.35,
     }),
     new Mirrors({

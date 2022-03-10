@@ -1,9 +1,10 @@
 import {
   Crop,
-  Generic,
+  DiffractionPatterns,
   FocusBlur,
   Newsprint,
   StereographicProjection,
+  TileSeamless,
 } from './gegl/exports.js';
 import Project from './project.js';
 
@@ -13,12 +14,12 @@ const project: Project = {
   createInputImage: false,
   name: '2022-03-08',
   operations: [
-    new Generic('gegl:diffraction-patterns', {
+    new DiffractionPatterns({
       height,
       width,
     }),
     new Crop({height, width}),
-    new Generic('gegl:tile-seamless'),
+    new TileSeamless(),
     new StereographicProjection(),
     new Newsprint({
       colorModel: 'cmyk',
