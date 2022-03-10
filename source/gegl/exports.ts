@@ -13,4 +13,5 @@ export * from './plasma.js';
 export * from './simplex-noise.js';
 export * from './softglow.js';
 export * from './stereographic-projection.js';
+export * from './tile-seamless.js';
 export * from './waves.js';
