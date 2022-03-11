@@ -1,10 +1,12 @@
 import {
   Crop,
   FocusBlur,
-  Generic,
+  Maze,
   MedianBlur,
   Mirrors,
   Newsprint,
+  Oilify,
+  TileGlass,
   TileSeamless,
   Waterpixels,
   Waves,
@@ -17,8 +19,8 @@ const project: Project = {
   createInputImage: true,
   name: '2022-03-09',
   operations: [
-    new Generic('gegl:maze'),
-    new Generic('gegl:tile-glass'),
+    new Maze(),
+    new TileGlass(),
     new Waterpixels(),
     new Newsprint({
       angle2: -55.4,
@@ -31,7 +33,7 @@ const project: Project = {
       clamp: true,
     }),
     new Crop({height, width}),
-    new Generic('gegl:oilify'),
+    new Oilify(),
     new TileSeamless(),
     new MedianBlur({
       percentile: 2.35,

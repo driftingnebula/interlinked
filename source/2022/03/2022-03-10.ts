@@ -1,10 +1,4 @@
-import {
-  CellNoise,
-  Crop,
-  Generic,
-  Newsprint,
-  Waves,
-} from '../../gegl/exports.js';
+import {Bloom, CellNoise, Crop, Newsprint, Waves} from '../../gegl/exports.js';
 import Project from '../../project.js';
 
 const [width, height] = [3840, 2160];
@@ -38,7 +32,7 @@ const project: Project = {
       y: -0.75,
     }),
     new Crop({height, width}),
-    new Generic('gegl:bloom', {
+    new Bloom({
       radius: 20,
       softness: 57,
       strength: 90,

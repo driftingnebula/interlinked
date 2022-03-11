@@ -1,8 +1,9 @@
 import {
+  Bloom,
   Cartoon,
   Crop,
-  Generic,
   Newsprint,
+  NoisePick,
   Plasma,
   Waterpixels,
 } from '../../gegl/exports.js';
@@ -41,12 +42,12 @@ const project: Project = {
       period4: 30,
       turbulence: 0.9,
     }),
-    new Generic('gegl:bloom', {
+    new Bloom({
       radius: 7.48,
       strength: 115.29,
       threshold: 65.88,
     }),
-    new Generic('gegl:noise-pick', {
+    new NoisePick({
       repeat: 5,
       seed: 0,
     }),
