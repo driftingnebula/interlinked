@@ -6,6 +6,7 @@ export * from './crop.js';
 export * from './diffraction-patterns.js';
 export * from './focus-blur.js';
 export * from './generic.js';
+export * from './maze.js';
 export * from './median-blur.js';
 export * from './mirrors.js';
 export * from './mosaic.js';
