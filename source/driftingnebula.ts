@@ -8,12 +8,7 @@ import meow from 'meow';
 import {Crop} from './gegl/exports.js';
 import Project from './project.js';
 
-import d2022_03_06 from './2022-03-06.js';
-import d2022_03_07 from './2022-03-07.js';
-import d2022_03_08 from './2022-03-08.js';
-import d2022_03_09 from './2022-03-09.js';
-import d2022_03_10 from './2022-03-10.js';
-import d2022_03_11 from './2022-03-11.js';
+import p2022 from './2022/projects.js';
 
 async function main(): Promise<void> {
   const cli = meow(
@@ -45,14 +40,9 @@ async function main(): Promise<void> {
   const includeDefaults = cli.flags.includeDefaults;
   const noRender = !cli.flags.render;
 
-  const projects: Project[] = [
-    d2022_03_06,
-    d2022_03_07,
-    d2022_03_08,
-    d2022_03_09,
-    d2022_03_10,
-    d2022_03_11,
-  ].filter((project) => project.name.startsWith(cli.flags.filter));
+  const projects: Project[] = [...p2022].filter((project) =>
+    project.name.startsWith(cli.flags.filter),
+  );
 
   for (const {
     createInputImage,

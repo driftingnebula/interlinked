@@ -8,8 +8,8 @@ import {
   TileSeamless,
   Waterpixels,
   Waves,
-} from './gegl/exports.js';
-import Project from './project.js';
+} from '../../gegl/exports.js';
+import Project from '../../project.js';
 
 const [width, height] = [1920, 1080];
 

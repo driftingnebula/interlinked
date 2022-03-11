@@ -1,5 +1,11 @@
-import {CellNoise, Crop, Generic, Newsprint, Waves} from './gegl/exports.js';
-import Project from './project.js';
+import {
+  CellNoise,
+  Crop,
+  Generic,
+  Newsprint,
+  Waves,
+} from '../../gegl/exports.js';
+import Project from '../../project.js';
 
 const [width, height] = [3840, 2160];
 

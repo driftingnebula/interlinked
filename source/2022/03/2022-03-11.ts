@@ -5,8 +5,8 @@ import {
   Newsprint,
   Plasma,
   Waterpixels,
-} from './gegl/exports.js';
-import Project from './project.js';
+} from '../../gegl/exports.js';
+import Project from '../../project.js';
 
 const [width, height] = [3840, 2160];
 
