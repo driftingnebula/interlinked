@@ -12,6 +12,7 @@ export * from './mirrors.js';
 export * from './mosaic.js';
 export * from './newsprint.js';
 export * from './noise-pick.js';
+export * from './oilify.js';
 export * from './plasma.js';
 export * from './simplex-noise.js';
 export * from './softglow.js';
