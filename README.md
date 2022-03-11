@@ -30,6 +30,12 @@ pnpm start -- --no-render
 # parameters for GEGL operations.
 pnpm start -- --include-defaults
 
+# Run only the projects starting with a given name.
+pnpm start -- --filter 2022-03
+
+# See all the other options.
+pnpm start -- --help
+
 # Lint the code and run tests.
 pnpm test
 ```

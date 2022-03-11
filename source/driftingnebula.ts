@@ -19,6 +19,7 @@ async function main(): Promise<void> {
   const cli = meow(
     `
     Options
+      --filter <name>    Only render projects starting with <name>.
       --include-defaults Include default GEGL operation parameters.
       --no-render        Don't render any images.
     `,
