@@ -1,5 +1,4 @@
 import {
-  Crop,
   FocusBlur,
   Maze,
   MedianBlur,
@@ -32,7 +31,6 @@ const project: Project = {
       amplitude: 5.9,
       clamp: true,
     }),
-    new Crop({height, width}),
     new Oilify(),
     new TileSeamless(),
     new MedianBlur({

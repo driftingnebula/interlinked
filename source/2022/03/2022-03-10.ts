@@ -1,4 +1,4 @@
-import {Bloom, CellNoise, Crop, Newsprint, Waves} from '../../gegl/exports.js';
+import {Bloom, CellNoise, Newsprint, Waves} from '../../gegl/exports.js';
 import Project from '../../project.js';
 
 const [width, height] = [3840, 2160];
@@ -11,7 +11,6 @@ const project: Project = {
       scale: 0.5,
       seed: 2_762_328_325,
     }),
-    new Crop({height, width}),
     new Newsprint({
       angle4: 75.85,
       colorModel: 'rgb',
@@ -31,7 +30,6 @@ const project: Project = {
       x: -0.25,
       y: -0.75,
     }),
-    new Crop({height, width}),
     new Bloom({
       radius: 20,
       softness: 57,

@@ -27,7 +27,7 @@ export class Waves extends BaseOperation<WavesParameters> {
     return Waves.default;
   }
 
-  public appendCrop = false;
+  public appendCrop = true;
   public name = 'gegl:waves';
 
   constructor(parameters?: Partial<WavesParameters>) {

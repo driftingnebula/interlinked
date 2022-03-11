@@ -1,6 +1,5 @@
 import {
   Cartoon,
-  Crop,
   MedianBlur,
   Mirrors,
   Mosaic,
@@ -46,7 +45,6 @@ const project: Project = {
       nSegs: 2,
     }),
     new Cartoon(),
-    new Crop({height, width}),
     new Waterpixels({
       fill: 'average',
       size: 32,

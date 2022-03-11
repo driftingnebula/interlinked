@@ -1,5 +1,4 @@
 import {
-  Crop,
   DiffractionPatterns,
   FocusBlur,
   Newsprint,
@@ -18,7 +17,6 @@ const project: Project = {
       height,
       width,
     }),
-    new Crop({height, width}),
     new TileSeamless(),
     new StereographicProjection(),
     new Newsprint({

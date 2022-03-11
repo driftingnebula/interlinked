@@ -1,7 +1,6 @@
 import {
   Bloom,
   Cartoon,
-  Crop,
   Newsprint,
   NoisePick,
   Plasma,
@@ -51,7 +50,6 @@ const project: Project = {
       repeat: 5,
       seed: 0,
     }),
-    new Crop({height, width}),
   ],
   resetAlpha: false,
   resolution: {

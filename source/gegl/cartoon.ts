@@ -15,7 +15,7 @@ export class Cartoon extends BaseOperation<CartoonParameters> {
     return Cartoon.default;
   }
 
-  public appendCrop = false;
+  public appendCrop = true;
   public name = 'gegl:cartoon';
 
   constructor(parameters?: Partial<CartoonParameters>) {
