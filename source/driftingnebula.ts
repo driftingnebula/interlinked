@@ -13,6 +13,7 @@ import d2022_03_07 from './2022-03-07.js';
 import d2022_03_08 from './2022-03-08.js';
 import d2022_03_09 from './2022-03-09.js';
 import d2022_03_10 from './2022-03-10.js';
+import d2022_03_11 from './2022-03-11.js';
 
 async function main(): Promise<void> {
   const cli = meow(
@@ -49,6 +50,7 @@ async function main(): Promise<void> {
     d2022_03_08,
     d2022_03_09,
     d2022_03_10,
+    d2022_03_11,
   ].filter((project) => project.name.startsWith(cli.flags.filter));
 
   for (const {
