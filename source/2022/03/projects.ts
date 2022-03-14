@@ -8,6 +8,7 @@ import p2022_03_10 from './2022-03-10.js';
 import p2022_03_11 from './2022-03-11.js';
 import p2022_03_12 from './2022-03-12.js';
 import p2022_03_13 from './2022-03-13.js';
+import p2022_03_14 from './2022-03-14.js';
 
 const projects: Project[] = [
   p2022_03_06,
@@ -18,6 +19,7 @@ const projects: Project[] = [
   p2022_03_11,
   p2022_03_12,
   p2022_03_13,
+  p2022_03_14,
 ];
 
 export default projects;
