@@ -1,7 +1,7 @@
 {
   "name": "driftingnebula",
   "description": "Generative art with GIMP, GEGL and ImageMagick.",
-  "license": "GPL-3.0-or-later",
+  "license": "AGPL-3.0-or-later",
   "version": "1.0.0",
   "scripts": {
     "start": "node --loader=ts-node/esm --no-warnings source/driftingnebula.ts",
