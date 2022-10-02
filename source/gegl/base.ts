@@ -1,4 +1,4 @@
-export abstract class BaseOperation<P> {
+export abstract class BaseOperation<P extends {}> {
   public abstract get default(): P;
 
   public parameters: P;

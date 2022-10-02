@@ -89,7 +89,7 @@ async function main(): Promise<void> {
     } else {
       const fullOutputFile = path.join(baseDir, outputFile);
       if (createInputImage) {
-        await execa('magick', [
+        await execa('convert', [
           '-size',
           `${width}x${height}`,
           'xc:white',
@@ -116,8 +116,7 @@ async function main(): Promise<void> {
       }
 
       console.log(`* Writing ${compressedFile}`);
-      await execa('magick', [
-        'convert',
+      await execa('convert', [
         fullOutputFile,
         '-quality',
         '92',
