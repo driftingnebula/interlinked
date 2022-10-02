@@ -1,10 +1,10 @@
 {
-  "name": "driftingnebula",
+  "name": "interlinked",
   "description": "Generative art with GIMP, GEGL and ImageMagick.",
   "license": "AGPL-3.0-or-later",
   "version": "1.0.0",
   "scripts": {
-    "start": "node --loader=ts-node/esm --no-warnings source/driftingnebula.ts",
+    "start": "ts-node-esm source/interlinked.ts",
     "test": "xo"
   },
   "dependencies": {
@@ -12,10 +12,10 @@
     "meow": "^10.1.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
+    "@types/node": "^18.8.0",
     "ts-node": "^10.6.0",
     "typescript": "^4.6.2",
-    "xo": "^0.48.0"
+    "xo": "^0.52.3"
   },
   "type": "module",
   "xo": {
