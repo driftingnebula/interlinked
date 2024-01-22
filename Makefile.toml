@@ -1,0 +1,16 @@
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+# Do a full check of everything.
+[tasks.complete-check]
+dependencies = [
+  "clean",
+  "format",
+  "check",
+  "clippy",
+  "test",
+  "docs",
+  "build",
+  "audit-flow",
+  "outdated-flow"
+]
