@@ -6,7 +6,7 @@ mod operations;
 
 pub use operations::*;
 
-pub use indexmap::indexmap;
+use indexmap::indexmap;
 
 /// Type alias for a [`indexmap::IndexMap`] with static [`str`] keys and
 /// [`String`] values. The reason for [`mod@indexmap`] is to preserve insertion
