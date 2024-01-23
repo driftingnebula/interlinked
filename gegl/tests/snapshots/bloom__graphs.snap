@@ -1,0 +1,43 @@
+---
+source: gegl/tests/bloom.rs
+expression: graphs
+---
+[
+    (
+        "non-default: exclude defaults",
+        [
+            "gegl:bloom",
+            "limit_exposure=true",
+            "radius=100",
+            "softness=100",
+        ],
+    ),
+    (
+        "non-default: include defaults",
+        [
+            "gegl:bloom",
+            "limit_exposure=true",
+            "radius=100",
+            "softness=100",
+            "strength=50",
+            "threshold=50",
+        ],
+    ),
+    (
+        "default: exclude defaults",
+        [
+            "gegl:bloom",
+        ],
+    ),
+    (
+        "default: include defaults",
+        [
+            "gegl:bloom",
+            "limit_exposure=false",
+            "radius=10",
+            "softness=25",
+            "strength=50",
+            "threshold=50",
+        ],
+    ),
+]
