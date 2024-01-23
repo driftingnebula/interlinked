@@ -9,7 +9,7 @@ pub use operations::*;
 pub use indexmap::indexmap;
 
 /// Type alias for a [`indexmap::IndexMap`] with static [`str`] keys and
-/// [`String`] values. The reason for [`indexmap`] is to preserve insertion
+/// [`String`] values. The reason for [`mod@indexmap`] is to preserve insertion
 /// order for simpler testing.
 pub type GeglData = indexmap::IndexMap<&'static str, String>;
 
