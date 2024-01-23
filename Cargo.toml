@@ -1,0 +1,14 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+  "gegl"
+]
+resolver = "2"
+
+[workspace.lints.clippy]
+missing_docs_in_private_items = "warn"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
