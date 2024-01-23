@@ -43,3 +43,31 @@ macro_rules! gegl_operation {
     }
   };
 }
+
+/// A macro to generate an enum that implements [`std::fmt::Display`].
+#[macro_export]
+macro_rules! gegl_enum {
+  (
+    $enum_name:ident,
+    $($key:ident: $value:expr),*,
+  ) => {
+    #[doc = "TODO: Generate documentation for [`gegl_enum!`]."]
+    #[derive(Debug)]
+    pub enum $enum_name {
+      $(
+        #[doc = "TODO: Generate documentation for [`gegl_enum!`]."]
+        $key,
+      )*
+    }
+
+    impl std::fmt::Display for $enum_name {
+      fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let display = match self {
+          $($enum_name::$key => $value,)*
+        };
+
+        write!(f, "{display}")
+      }
+    }
+  };
+}
