@@ -9,6 +9,7 @@ mkShell rec {
   packages = [
     cargo-audit
     cargo-edit
+    cargo-expand
     cargo-insta
     cargo-make
     cargo-outdated
