@@ -7,7 +7,7 @@ expression: graphs
         "non-default: exclude defaults",
         [
             "gegl:bloom",
-            "limit_exposure=true",
+            "limit-exposure=true",
             "radius=100",
             "softness=100",
         ],
@@ -16,7 +16,7 @@ expression: graphs
         "non-default: include defaults",
         [
             "gegl:bloom",
-            "limit_exposure=true",
+            "limit-exposure=true",
             "radius=100",
             "softness=100",
             "strength=50",
@@ -33,7 +33,7 @@ expression: graphs
         "default: include defaults",
         [
             "gegl:bloom",
-            "limit_exposure=false",
+            "limit-exposure=false",
             "radius=10",
             "softness=25",
             "strength=50",

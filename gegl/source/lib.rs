@@ -31,6 +31,7 @@ pub trait GeglOperation: Default + std::fmt::Debug {
         continue;
       }
 
+      let key = key.replace('_', "-");
       graph.push(format!("{key}={value}"));
     }
 

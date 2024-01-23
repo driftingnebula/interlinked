@@ -7,15 +7,15 @@ expression: graphs
         "non-default: exclude defaults",
         [
             "gegl:cartoon",
-            "mask_radius=0.1",
+            "mask-radius=0.1",
         ],
     ),
     (
         "non-default: include defaults",
         [
             "gegl:cartoon",
-            "mask_radius=0.1",
-            "pct_black=0.2",
+            "mask-radius=0.1",
+            "pct-black=0.2",
         ],
     ),
     (
@@ -28,8 +28,8 @@ expression: graphs
         "default: include defaults",
         [
             "gegl:cartoon",
-            "mask_radius=7",
-            "pct_black=0.2",
+            "mask-radius=7",
+            "pct-black=0.2",
         ],
     ),
 ]
