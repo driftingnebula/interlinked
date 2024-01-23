@@ -1,7 +1,7 @@
 //! All supported GEGL operations.
 
 mod enums;
-mod generator;
+mod macros;
 
 pub use enums::*;
 
