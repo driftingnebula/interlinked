@@ -4,21 +4,21 @@ use crate::gegl_enum;
 
 gegl_enum!(
   FocusBlurShape,
-  Circle: "circle",
-  Square: "square",
-  Diamond: "diamond",
-  Horizontal: "horizontal",
-  Vertical: "vertical",
+  Circle => "circle",
+  Square => "square",
+  Diamond => "diamond",
+  Horizontal => "horizontal",
+  Vertical => "vertical",
 );
 
 gegl_enum!(
   FocusBlurType,
-  Gaussian: "gaussian",
-  Lens: "lens",
+  Gaussian => "gaussian",
+  Lens => "lens",
 );
 
 gegl_enum!(
   MazeAlgorithmType,
-  DepthFirst: "depth-first",
-  Prim: "prim",
+  DepthFirst => "depth-first",
+  Prim => "prim",
 );

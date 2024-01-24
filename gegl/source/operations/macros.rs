@@ -49,7 +49,7 @@ macro_rules! gegl_operation {
 macro_rules! gegl_enum {
   (
     $enum_name:ident,
-    $($key:ident: $value:expr),*,
+    $($key:ident => $value:expr),*,
   ) => {
     #[doc = "TODO: Generate documentation for [`gegl_enum!`]."]
     #[derive(Debug)]
