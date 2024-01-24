@@ -115,3 +115,134 @@ gegl_operation!(
     y: i64, 16, "Vertical width of cells pixels.",
   ),
 );
+
+gegl_operation!(
+  struct_name: MedianBlur,
+  gegl_name: "median-blur",
+  append_crop: false,
+  values: (
+    abyss_policy: MedianBlurAbyssPolicy, MedianBlurAbyssPolicy::Clamp, "How image edges are handled.",
+    alpha_percentile: f64, 50.0, "Neighborhood alpha percentile.",
+    high_precision: bool, false, "Avoid clipping and quantization",
+    neighborhood: MedianBlurNeighborhood, MedianBlurNeighborhood::Circle, "Neighborhood type.",
+    percentile: f64, 50.0, "Neighborhood color percentile.",
+    radius: f64, 3.0, "Neighborhood radius, a negative value will calculate with inverted percentiles.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Mirrors,
+  gegl_name: "mirrors",
+  append_crop: false,
+  values: (
+    clip: bool, true, "Clip result to input size.",
+    c_x: f64, 0.5, "X coordinate of symmetry center in output.",
+    c_y: f64, 0.5, "Y coordinate of symmetry center in output.",
+    input_scale: f64, 100.0, "Scale factor to make rendering size bigger.",
+    m_angle: f64, 0.0, "Rotation applied to the mirrors.",
+    n_segs: i64, 6, "Number of mirrors to use.",
+    output_scale: f64, 1.0, "Scale factor to make rendering size bigger.",
+    o_x: f64, 0.0, "X axis ratio for the center of mirroring",
+    o_y: f64, 0.0, "Y axis ratio for the center of mirroring",
+    r_angle: f64, 0.0, "Rotation applied to the result.",
+    trim_x: f64, 0.0, "X axis ratio for trimming mirror expanse",
+    trim_y: f64, 0.0, "Y axis ratio for trimming mirror expanse",
+    warp: bool, true, "Fill full output area.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Mosaic,
+  gegl_name: "mosaic",
+  append_crop: false,
+  values: (
+    antialiasing: bool, true, "Enables smoother tile output.",
+    color_averaging: bool, true, "Tile color based on average of subsumed pixels.",
+    color_variation: f64, 0.2, "Magnitude of random color variations.",
+    joints_color: String, "#000".to_string(), "Joints color.",
+    light_color: String, "#fff".to_string(), "Light color.",
+    light_dir: f64, 135.0, "Direction of light-source (in degrees).",
+    seed: f64, 0.0, "Random seed.",
+    tile_allow_split: bool, true, "Allows splitting tiles at hard edges.",
+    tile_height: f64, 4.0, "Apparent height of each tile (in pixels).",
+    tile_neatness: f64, 0.65, "Deviation from perfectly formed tiles.",
+    tile_size: f64, 15.0, "Average diameter of each tile (in pixels).",
+    tile_spacing: f64, 1.0, "Inter-tile spacing (in pixels).",
+    tile_surface: bool, false, "Surface characteristics.",
+    tile_type: MosaicTileType, MosaicTileType::Hexagons, "What shape to use for tiles.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Newsprint,
+  gegl_name: "newsprint",
+  append_crop: false,
+  values: (
+    aa_samples: i64, 16, "Number of samples that are averaged for antialiasing the result.",
+    angle: f64, 75.0, "Black angle.",
+    angle2: f64, 15.0, "Red and cyan angle.",
+    angle3: f64, 45.0, "Green and magenta angle.",
+    angle4: f64, 0.0, "Blue and yellow angle.",
+    angleboost: f64, 0.0, "Multiplication factor for desired rotation of the local space for texture, the way this is computed makes it weak for desaturated colors and possibly stronger where there is color.",
+    black_pullout: f64, 1.0, "How much of common gray to pull out of CMY.",
+    blocksize: f64, -1.0, "Number of periods per tile, this tiling avoids high frequency anomaly that angle boost causes.",
+    color_model: NewsprintColorModel, NewsprintColorModel::BlackOnWhite, "How many inks to use.",
+    pattern: NewsprintPattern, NewsprintPattern::Line, "Black halftoning/dot pattern to use.",
+    pattern2: NewsprintPattern, NewsprintPattern::Line, "Red and cyan halftoning/dot pattern to use.",
+    pattern3: NewsprintPattern, NewsprintPattern::Line, "Green and magenta halftoning/dot pattern to use.",
+    pattern4: NewsprintPattern, NewsprintPattern::Line, "Blue and yellow halftoning/dot pattern to use.",
+    period: f64, 12.0, "Black number of pixels across one repetition of a base pattern at base resolution.",
+    period2: f64, 12.0, "Red and cyan number of pixels across one repetition of a base pattern at base resolution.",
+    period3: f64, 12.0, "Green and magenta number of pixels across one repetition of a base pattern at base resolution.",
+    period4: f64, 12.0, "Blue and yellow number of pixels across one repetition of a base pattern at base resolution.",
+    turbulence: f64, 0.0, "Color saturation dependent compression of period.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: NoisePick,
+  gegl_name: "noise-pick",
+  append_crop: true,
+  values: (
+    pct_random: f64, 50.0, "Randomization percentage.",
+    repeat: i64, 1, "Amount of repetitions to make.",
+    seed: f64, 0.0, "Random seed.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Oilify,
+  gegl_name: "oilify",
+  append_crop: false,
+  values: (
+    exponent: i64, 8, "Exponent for processing, controls smoothness.",
+    intensities: i64, 128, "Histogram size.",
+    mask_radius: i64, 4, "Radius of circle around pixel.",
+    use_inten: bool, true, "Use pixel luminance values.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Plasma,
+  gegl_name: "plasma",
+  append_crop: false,
+  values: (
+    height: i64, 768, "Height of the generated buffer",
+    seed: f64, 0.0, "Random seed.",
+    turbulence: f64, 1.0, "High values give more variation in details.",
+    width: i64, 1024, "Width of the generated buffer.",
+    x: i64, 0, "X coordinate start of the generated buffer.",
+    y: i64, 0, "Y coordinate start of the generated buffer.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: SimplexNoise,
+  gegl_name: "simplex-noise",
+  append_crop: true,
+  values: (
+    iterations: i64, 1, "The number of noise octaves.",
+    scale: f64, 1.0, "The scale of the noise function.",
+    seed: f64, 1.0, "The random seed for the noise function.",
+  ),
+);

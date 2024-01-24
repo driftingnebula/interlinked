@@ -22,3 +22,41 @@ gegl_enum!(
   DepthFirst => "depth-first",
   Prim => "prim",
 );
+
+gegl_enum!(
+  MedianBlurAbyssPolicy,
+  None => "none",
+  Clamp => "clamp",
+);
+
+gegl_enum!(
+  MedianBlurNeighborhood,
+  Square => "square",
+  Circle => "circle",
+  Diamond => "diamond",
+);
+
+gegl_enum!(
+  MosaicTileType,
+  Squares => "squares",
+  Hexagons => "hexagons",
+  Octagons => "octagons",
+  Triangles => "triangles",
+);
+
+gegl_enum!(
+  NewsprintPattern,
+  Line => "line",
+  Circle => "circle",
+  Diamond => "diamond",
+  Pssquare => "pssquare",
+  Cross => "cross",
+);
+
+gegl_enum!(
+  NewsprintColorModel,
+  BlackOnWhite => "black-on-white",
+  Cmyk => "cmyk",
+  Rgb => "rgb",
+  WhiteOnBlack => "white-on-black",
+);
