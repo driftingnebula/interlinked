@@ -3,7 +3,7 @@
 [package]
 name = "gegl"
 description = "GEGL data structure library for Rust."
-repository = "https://git.bauke.xyz/driftingnebula/gegl"
+repository = "https://git.bauke.xyz/driftingnebula/interlinked"
 license = "AGPL-3.0-or-later"
 version = "0.0.0"
 authors = ["Bauke <me@bauke.xyz>"]
