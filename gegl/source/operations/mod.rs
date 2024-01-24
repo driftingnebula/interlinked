@@ -246,3 +246,75 @@ gegl_operation!(
     seed: f64, 1.0, "The random seed for the noise function.",
   ),
 );
+
+gegl_operation!(
+  struct_name: Softglow,
+  gegl_name: "softglow",
+  append_crop: false,
+  values: (
+    brightness: f64, 0.3, "Brightness intensity.",
+    glow_radius: f64, 10.0, "Glow radius.",
+    sharpness: f64, 0.85, "Sharpness of the highlights.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: StereographicProjection,
+  gegl_name: "stereographic-projection",
+  append_crop: false,
+  values: (
+    height: i64, -1, "Output/rendering height in pixels, -1 for input height.",
+    inverse: bool, false, "Do the inverse mapping.",
+    pan: f64, 0.0, "Horizontal camera panning.",
+    sampler_type: StereographicProjectionSamplerType, StereographicProjectionSamplerType::Nearest, "Image resampling method to use.",
+    spin: f64, 0., "Spin angle around camera axis.",
+    tilt: f64, 90., "Vertical camera panning.",
+    width: i64, -1, "Output/rendering width in pixels, -1 for input width.",
+    zoom: f64, 100.0, "Zoom level.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: TileGlass,
+  gegl_name: "tile-glass",
+  append_crop: false,
+  values: (
+    tile_height: i64, 25, "Tile height.",
+    tile_width: i64, 25, "Tile width.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: TileSeamless,
+  gegl_name: "tile-seamless",
+  append_crop: false,
+  values: (,),
+);
+
+gegl_operation!(
+  struct_name: Waterpixels,
+  gegl_name: "waterpixels",
+  append_crop: false,
+  values: (
+    fill: WaterpixelsFill, WaterpixelsFill::Average, "How to fill superpixels.",
+    regularization: i64, 0, "Spatial regularization, trade-off between superpixel regularity and adherence to object boundaries.",
+    size: i64, 32, "Superpixels size.",
+    smoothness: f64, 1.0, "Gradient smoothness.",
+  ),
+);
+
+gegl_operation!(
+  struct_name: Waves,
+  gegl_name: "waves",
+  append_crop: true,
+  values: (
+    amplitude: f64, 25.0, "Amplitude of the wave ripples.",
+    aspect: f64, 1.0, "Aspect ratio.",
+    clamp: bool, false, "Limit deformation in the image area.",
+    period: f64, 100.0, "Period/wavelength of the ripples.",
+    phi: f64, 0.0, "Phase shift of the waves.",
+    sampler_type: WavesSamplerType, WavesSamplerType::Cubic, "Mathematical method for reconstructing pixel values.",
+    x: f64, 0.5, "Center X coordinate to start the waves from.",
+    y: f64, 0.5, "Center Y coordinate to start the waves from.",
+  ),
+);

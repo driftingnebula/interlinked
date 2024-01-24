@@ -60,3 +60,27 @@ gegl_enum!(
   Rgb => "rgb",
   WhiteOnBlack => "white-on-black",
 );
+
+gegl_enum!(
+  StereographicProjectionSamplerType,
+  Nearest => "nearest",
+  Linear => "linear",
+  Cubic => "cubic",
+  Nohalo => "nohalo",
+  Lohalo => "lohalo",
+);
+
+gegl_enum!(
+  WaterpixelsFill,
+  Average => "average",
+  Random => "random",
+);
+
+gegl_enum!(
+  WavesSamplerType,
+  Nearest => "nearest",
+  Linear => "linear",
+  Cubic => "cubic",
+  Nohalo => "nohalo",
+  Lohalo => "lohalo",
+);
