@@ -31,6 +31,10 @@ macro_rules! gegl_operation {
         $append_crop
       }
 
+      fn default_values(&self) -> $crate::GeglData {
+        Self::default().values()
+      }
+
       fn name(&self) -> &'static str {
         concat!("gegl:", $gegl_name)
       }
