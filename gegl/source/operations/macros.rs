@@ -57,14 +57,15 @@ macro_rules! gegl_operation {
 #[macro_export]
 macro_rules! gegl_enum {
   (
+    $(#[$enum_meta:meta])*
     $enum_name:ident,
     $($key:ident => $value:expr),*,
   ) => {
-    #[doc = "TODO: Generate documentation for [`gegl_enum!`]."]
+    $(#[$enum_meta])*
     #[derive(Debug)]
     pub enum $enum_name {
       $(
-        #[doc = "TODO: Generate documentation for [`gegl_enum!`]."]
+        #[doc = concat!("The [`", stringify!($enum_name), "`] `", $value, "`." )]
         $key,
       )*
     }
