@@ -7,13 +7,18 @@ macro_rules! gegl_operation {
     struct_name: $struct_name:ident,
     gegl_name: $gegl_name:expr,
     append_crop: $append_crop:expr,
-    values: ($($key:ident: $key_type:ty, $key_default:expr, $key_doc:expr),*,),
+    values: (
+      $(
+        $(#[$key_meta:meta])*
+        $key:ident: $key_type:ty, $key_default:expr
+      ),*,
+    ),
   ) => {
     #[doc = concat!(" The `gegl:", $gegl_name, "` operation.")]
     #[derive(Debug)]
     pub struct $struct_name {
       $(
-        #[doc = concat!(" ", $key_doc)]
+        $(#[$key_meta])*
         pub $key: $key_type,
       )*
     }
