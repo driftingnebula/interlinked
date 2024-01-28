@@ -15,7 +15,7 @@ pub type GeglData = indexmap::IndexMap<&'static str, String>;
 
 /// The [`GeglOperation`] trait defines a set of common functions for the
 /// individual operations to implement so they can be used with the GEGL CLI.
-pub trait GeglOperation: std::fmt::Debug {
+pub trait GeglOperation: std::fmt::Debug + Send + Sync {
   /// Some GEGL operations will run infinitely unless you limit the buffer in
   /// some way, so all operations must indicate whether or not they should be
   /// followed by a crop operation.
