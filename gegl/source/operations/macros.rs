@@ -23,6 +23,23 @@ macro_rules! gegl_operation {
       )*
     }
 
+    paste::paste! {
+      impl $struct_name {
+        $(
+          #[doc = concat!(" Builder function to assign `", stringify!($key), "`.")]
+          pub fn [<with_ $key>](mut self, value: $key_type) -> $struct_name {
+            self.$key = value;
+            self
+          }
+        )*
+
+        /// Get this operation inside a [`Box`].
+        pub fn boxed(self) -> Box<$struct_name> {
+          Box::new(self)
+        }
+      }
+    }
+
     impl Default for $struct_name {
       fn default() -> $struct_name {
         $struct_name {
