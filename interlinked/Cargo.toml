@@ -1,0 +1,33 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name = "interlinked"
+description = "Generative art with GIMP, GEGL and ImageMagick."
+repository = "https://git.bauke.xyz/driftingnebula/interlinked"
+license = "AGPL-3.0-or-later"
+version = "0.0.0"
+authors = ["Bauke <me@bauke.xyz>"]
+edition = "2021"
+readme = "../README.md"
+
+[lib]
+path = "source/lib.rs"
+
+[[bin]]
+name = "interlinked"
+path = "source/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+color-eyre = "0.6.2"
+gegl = { path = "../gegl" }
+subprocess = "0.2.9"
+
+[dependencies.clap]
+features = ["derive"]
+version = "4.4.18"
+
+[dev-dependencies]
+insta = "1.34.0"

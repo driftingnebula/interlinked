@@ -2,7 +2,8 @@
 
 [workspace]
 members = [
-  "gegl"
+  "gegl",
+  "interlinked",
 ]
 resolver = "2"
 
