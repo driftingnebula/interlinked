@@ -234,7 +234,7 @@ pub fn day_2022_03_11() -> Project {
         .with_seed(168_139_081.0)
         .with_turbulence(1.5)
         .with_height(2160)
-        .with_height(3840)
+        .with_width(3840)
         .boxed(),
       Cartoon::default()
         .with_mask_radius(40.0)
