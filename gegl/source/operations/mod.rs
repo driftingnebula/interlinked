@@ -112,6 +112,18 @@ gegl_operation!(
 );
 
 gegl_operation!(
+  struct_name: EdgeNeon,
+  gegl_name: "edge-neon",
+  append_crop: false,
+  values: (
+    /// Strength of effect.
+    amount: f64, 0.0,
+    /// Radius of effect in pixels.
+    radius: f64, 5.0,
+  ),
+);
+
+gegl_operation!(
   struct_name: FocusBlur,
   gegl_name: "focus-blur",
   append_crop: false,
