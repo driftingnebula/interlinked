@@ -111,3 +111,33 @@ pub fn day_2022_03_07() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-08.
+pub fn day_2022_03_08() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-08".to_string(),
+    operations: vec![
+      DiffractionPatterns::default()
+        .with_height(1080)
+        .with_width(1920)
+        .boxed(),
+      TileSeamless::default().boxed(),
+      StereographicProjection::default().boxed(),
+      Newsprint::default()
+        .with_color_model(NewsprintColorModel::Cmyk)
+        .with_period(4.0)
+        .boxed(),
+      FocusBlur::default()
+        .with_blur_radius(9.72)
+        .with_blur_type(FocusBlurType::Lens)
+        .with_focus(0.0)
+        .with_highlight_factor(0.924)
+        .with_radius(1.173)
+        .with_shape(FocusBlurShape::Circle)
+        .boxed(),
+    ],
+    resolution: (1920, 1080),
+    turn_off_alpha: false,
+  }
+}
