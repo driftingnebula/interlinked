@@ -57,3 +57,57 @@ pub fn day_2022_03_06() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-07.
+pub fn day_2022_03_07() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-07".to_string(),
+    operations: vec![
+      Plasma::default()
+        .with_height(1080)
+        .with_seed(2_000_111_903.0)
+        .with_turbulence(1.0)
+        .with_width(1920)
+        .boxed(),
+      Mosaic::default()
+        .with_color_variation(1.0)
+        .with_tile_height(5.0)
+        .with_tile_neatness(1.0)
+        .with_tile_size(116.53)
+        .with_tile_surface(true)
+        .with_tile_type(MosaicTileType::Triangles)
+        .boxed(),
+      Waves::default()
+        .with_amplitude(2.9)
+        .with_clamp(true)
+        .with_sampler_type(WavesSamplerType::Cubic)
+        .boxed(),
+      Waves::default()
+        .with_amplitude(17.3)
+        .with_clamp(true)
+        .with_sampler_type(WavesSamplerType::Cubic)
+        .boxed(),
+      Mirrors::default()
+        .with_o_x(1.0)
+        .with_o_y(0.353)
+        .with_n_segs(2)
+        .boxed(),
+      Cartoon::default().boxed(),
+      Waterpixels::default()
+        .with_fill(WaterpixelsFill::Average)
+        .with_size(32)
+        .with_smoothness(1.0)
+        .boxed(),
+      Mirrors::default()
+        .with_o_x(0.01)
+        .with_o_y(0.01)
+        .with_n_segs(5)
+        .with_r_angle(342.0)
+        .boxed(),
+      MedianBlur::default().boxed(),
+    ],
+    resolution: (1920, 1080),
+    turn_off_alpha: false,
+  }
+}
