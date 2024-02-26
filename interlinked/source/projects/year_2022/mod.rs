@@ -223,3 +223,46 @@ pub fn day_2022_03_10() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-11.
+pub fn day_2022_03_11() -> Project {
+  Project {
+    create_input_image: true,
+    name: "2022-03-11".to_string(),
+    operations: vec![
+      Plasma::default()
+        .with_seed(168_139_081.0)
+        .with_turbulence(1.5)
+        .with_height(2160)
+        .with_height(3840)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(40.0)
+        .with_pct_black(0.2)
+        .boxed(),
+      Waterpixels::default().with_size(64).boxed(),
+      Cartoon::default()
+        .with_mask_radius(40.0)
+        .with_pct_black(0.2)
+        .boxed(),
+      Newsprint::default()
+        .with_color_model(NewsprintColorModel::Rgb)
+        .with_pattern2(NewsprintPattern::Circle)
+        .with_pattern3(NewsprintPattern::Cross)
+        .with_pattern4(NewsprintPattern::Circle)
+        .with_period2(15.0)
+        .with_period3(150.0)
+        .with_period4(30.0)
+        .with_turbulence(0.9)
+        .boxed(),
+      Bloom::default()
+        .with_radius(7.48)
+        .with_strength(115.29)
+        .with_threshold(65.88)
+        .boxed(),
+      NoisePick::default().with_repeat(5).with_seed(0.0).boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}
