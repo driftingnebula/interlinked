@@ -141,3 +141,44 @@ pub fn day_2022_03_08() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-09.
+pub fn day_2022_03_09() -> Project {
+  Project {
+    create_input_image: true,
+    name: "2022-03-09".to_string(),
+    operations: vec![
+      Maze::default().boxed(),
+      TileGlass::default().boxed(),
+      Waterpixels::default().boxed(),
+      Newsprint::default()
+        .with_angle2(-55.4)
+        .with_angle3(60.77)
+        .with_angle4(103.55)
+        .with_color_model(NewsprintColorModel::Rgb)
+        .boxed(),
+      Waves::default()
+        .with_amplitude(5.9)
+        .with_clamp(true)
+        .boxed(),
+      Oilify::default().boxed(),
+      TileSeamless::default().boxed(),
+      MedianBlur::default().with_percentile(2.35).boxed(),
+      Mirrors::default()
+        .with_n_segs(3)
+        .with_o_x(0.1)
+        .with_o_y(0.2)
+        .with_r_angle(330.0)
+        .boxed(),
+      FocusBlur::default()
+        .with_blur_radius(33.57)
+        .with_blur_type(FocusBlurType::Lens)
+        .with_focus(0.111)
+        .with_highlight_factor(0.529)
+        .with_radius(1.173)
+        .boxed(),
+    ],
+    resolution: (1920, 1080),
+    turn_off_alpha: true,
+  }
+}
