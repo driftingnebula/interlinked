@@ -1,4 +1,4 @@
-//! The project made on 2022-03-06.
+//! Projects made in 2022.
 
 use {crate::Project, gegl::*};
 
