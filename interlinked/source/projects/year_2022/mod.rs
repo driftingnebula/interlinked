@@ -182,3 +182,44 @@ pub fn day_2022_03_09() -> Project {
     turn_off_alpha: true,
   }
 }
+
+/// The project made on 2022-03-10.
+pub fn day_2022_03_10() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-10".to_string(),
+    operations: vec![
+      CellNoise::default()
+        .with_scale(0.5)
+        .with_seed(2_762_328_325.0)
+        .boxed(),
+      Newsprint::default()
+        .with_angle4(75.85)
+        .with_color_model(NewsprintColorModel::Rgb)
+        .with_pattern2(NewsprintPattern::Circle)
+        .with_pattern4(NewsprintPattern::Cross)
+        .with_period2(42.38)
+        .with_period3(0.0)
+        .with_period4(135.1)
+        .with_turbulence(0.454)
+        .boxed(),
+      Waves::default()
+        .with_amplitude(67.6)
+        .with_clamp(true)
+        .with_period(514.8)
+        .with_phi(-0.529)
+        .with_sampler_type(WavesSamplerType::Cubic)
+        .with_x(-0.25)
+        .with_y(-0.75)
+        .boxed(),
+      Bloom::default()
+        .with_radius(20.0)
+        .with_softness(57.0)
+        .with_strength(90.0)
+        .with_threshold(10.0)
+        .boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}
