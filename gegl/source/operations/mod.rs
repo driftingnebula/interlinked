@@ -112,6 +112,20 @@ gegl_operation!(
 );
 
 gegl_operation!(
+  struct_name: Edge,
+  gegl_name: "edge",
+  append_crop: false,
+  values: (
+    /// The edge detection algorithm to use.
+    algorithm: EdgeAlgorithm, EdgeAlgorithm::Sobel,
+    /// The amount of edge detection to perform.
+    amount: f64, 2.0,
+    /// The edge detection border behavior.
+    border_behavior: AbyssPolicy, AbyssPolicy::Clamp,
+  ),
+);
+
+gegl_operation!(
   struct_name: EdgeNeon,
   gegl_name: "edge-neon",
   append_crop: false,

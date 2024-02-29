@@ -3,6 +3,27 @@
 use crate::gegl_enum;
 
 gegl_enum!(
+  /// The abyss policy for various GEGL operations.
+  AbyssPolicy,
+  Black => "black",
+  Clamp => "clamp",
+  Loop => "loop",
+  None => "none",
+  White => "white",
+);
+
+gegl_enum!(
+  /// The detection algorithm for [`Edge`][super::Edge].
+  EdgeAlgorithm,
+  Differential => "differential",
+  Gradient => "gradient",
+  Laplace => "laplace",
+  PrewittCompass => "prewitt",
+  Roberts => "roberts",
+  Sobel => "sobel",
+);
+
+gegl_enum!(
   /// The shape for [`FocusBlur`][super::FocusBlur].
   FocusBlurShape,
   Circle => "circle",
