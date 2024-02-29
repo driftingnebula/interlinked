@@ -300,3 +300,35 @@ pub fn day_2022_03_12() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-13.
+pub fn day_2022_03_13() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-13".to_string(),
+    operations: vec![
+      Plasma::default()
+        .with_seed(65_198_886.0)
+        .with_height(2160)
+        .with_width(3840)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(50.0)
+        .with_pct_black(1.0)
+        .boxed(),
+      Waterpixels::default().with_size(64).boxed(),
+      Oilify::default().with_mask_radius(8).boxed(),
+      Mirrors::default()
+        .with_n_segs(8)
+        .with_o_x(0.829)
+        .with_o_y(0.812)
+        .with_trim_x(0.325)
+        .with_trim_y(0.09)
+        .boxed(),
+      StereographicProjection::default().with_tilt(-73.42).boxed(),
+      Oilify::default().with_mask_radius(8).boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}

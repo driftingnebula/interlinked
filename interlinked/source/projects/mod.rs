@@ -14,5 +14,6 @@ pub fn all_projects() -> Vec<Project> {
     year_2022::day_2022_03_10(),
     year_2022::day_2022_03_11(),
     year_2022::day_2022_03_12(),
+    year_2022::day_2022_03_13(),
   ]
 }
