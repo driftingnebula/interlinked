@@ -367,3 +367,74 @@ pub fn day_2022_03_14() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-15.
+pub fn day_2022_03_15() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-15".to_string(),
+    operations: vec![
+      Spiral::default()
+        .with_balance(0.424)
+        .with_color1("#3078d2".to_string())
+        .with_color2("#ff00dc".to_string())
+        .with_direction(SpiralDirection::Clockwise)
+        .with_height(2160)
+        .with_radius(918.7)
+        .with_spiral_type(SpiralType::Linear)
+        .with_width(3840)
+        .with_x(0.307)
+        .with_y(0.542)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(50.0)
+        .with_pct_black(1.0)
+        .boxed(),
+      Newsprint::default()
+        .with_color_model(NewsprintColorModel::Rgb)
+        .with_pattern2(NewsprintPattern::Line)
+        .with_pattern3(NewsprintPattern::Diamond)
+        .with_pattern4(NewsprintPattern::Pssquare)
+        .with_period2(105.96)
+        .with_period3(30.46)
+        .with_period4(125.83)
+        .with_turbulence(0.182)
+        .boxed(),
+      Bloom::default()
+        .with_radius(2.08)
+        .with_softness(87.94)
+        .with_strength(165.29)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(50.0)
+        .with_pct_black(1.0)
+        .boxed(),
+      Waves::default()
+        .with_amplitude(65.0)
+        .with_clamp(true)
+        .with_period(500.0)
+        .with_phi(0.5)
+        .with_x(0.0)
+        .with_y(0.1)
+        .boxed(),
+      Mirrors::default()
+        .with_r_angle(30.0)
+        .with_n_segs(3)
+        .with_o_x(0.312)
+        .with_o_y(1.0)
+        .with_trim_x(0.162)
+        .with_trim_y(0.031)
+        .boxed(),
+      FocusBlur::default()
+        .with_blur_radius(5.4)
+        .with_blur_type(FocusBlurType::Lens)
+        .with_focus(0.154)
+        .with_highlight_factor(0.75)
+        .with_midpoint(0.38)
+        .with_radius(0.802)
+        .boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}
