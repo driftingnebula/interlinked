@@ -332,3 +332,38 @@ pub fn day_2022_03_13() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-14.
+pub fn day_2022_03_14() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-14".to_string(),
+    operations: vec![
+      DiffractionPatterns::default()
+        .with_height(2160)
+        .with_width(3840)
+        .boxed(),
+      Mirrors::default()
+        .with_n_segs(7)
+        .with_o_x(0.347)
+        .with_o_y(0.1)
+        .with_r_angle(13.0)
+        .with_trim_x(0.051)
+        .with_trim_y(0.253)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(50.0)
+        .with_pct_black(1.0)
+        .boxed(),
+      MedianBlur::default().with_radius(5.0).boxed(),
+      Edge::default()
+        .with_algorithm(EdgeAlgorithm::PrewittCompass)
+        .with_amount(10.0)
+        .with_border_behavior(AbyssPolicy::Clamp)
+        .boxed(),
+      MedianBlur::default().with_radius(5.0).boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}
