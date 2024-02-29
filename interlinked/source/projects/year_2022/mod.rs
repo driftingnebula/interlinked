@@ -438,3 +438,35 @@ pub fn day_2022_03_15() -> Project {
     turn_off_alpha: false,
   }
 }
+
+/// The project made on 2022-03-29.
+pub fn day_2022_03_29() -> Project {
+  Project {
+    create_input_image: false,
+    name: "2022-03-29".to_string(),
+    operations: vec![
+      Plasma::default()
+        .with_seed(3_474_742_930.0)
+        .with_turbulence(2.0)
+        .with_height(2160)
+        .with_width(3840)
+        .boxed(),
+      Cartoon::default()
+        .with_mask_radius(50.0)
+        .with_pct_black(1.0)
+        .boxed(),
+      FocusBlur::default()
+        .with_blur_type(FocusBlurType::Lens)
+        .boxed(),
+      Mirrors::default().with_o_x(0.406).with_o_y(0.588).boxed(),
+      Oilify::default().with_mask_radius(8).boxed(),
+      Bloom::default()
+        .with_radius(2.08)
+        .with_softness(87.94)
+        .with_strength(165.29)
+        .boxed(),
+    ],
+    resolution: (3840, 2160),
+    turn_off_alpha: false,
+  }
+}
