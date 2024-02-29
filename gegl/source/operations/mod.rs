@@ -416,6 +416,38 @@ gegl_operation!(
 );
 
 gegl_operation!(
+  struct_name: Spiral,
+  gegl_name: "spiral",
+  append_crop: true,
+  values: (
+    /// The area balance between the two colors.
+    balance: f64, 0.0,
+    /// The logarithmic spiral base.
+    base: f64, 2.0,
+    /// The primary color.
+    color1: String, "#000".to_string(),
+    /// The secondary color.
+    color2: String, "#fff".to_string(),
+    /// The spiral swirl direction.
+    direction: SpiralDirection, SpiralDirection::Clockwise,
+    /// The height of the generated buffer.
+    height: i64, 768,
+    /// The spiral radius.
+    radius: f64, 100.0,
+    /// The spiral rotation.
+    rotation: f64, 0.0,
+    /// The spiral type.
+    spiral_type: SpiralType, SpiralType::Linear,
+    /// The X origin coordinate.
+    x: f64, 0.5,
+    /// The Y origin coordinate.
+    y: f64, 0.5,
+    /// The width of the generated buffer.
+    width: i64, 1024,
+  ),
+);
+
+gegl_operation!(
   struct_name: StereographicProjection,
   gegl_name: "stereographic-projection",
   append_crop: false,

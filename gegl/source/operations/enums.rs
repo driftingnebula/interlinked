@@ -91,6 +91,20 @@ gegl_enum!(
 );
 
 gegl_enum!(
+  /// The spiral swirl direction for [`Spiral`][super::Spiral]
+  SpiralDirection,
+  Clockwise => "cw",
+  CounterClockwise => "ccw",
+);
+
+gegl_enum!(
+  /// The spiral type for [`Spiral`][super::Spiral]
+  SpiralType,
+  Linear => "linear",
+  Logarithmic => "logarithmic",
+);
+
+gegl_enum!(
   /// The sampler type for [`StereographicProjection`][super::StereographicProjection].
   StereographicProjectionSamplerType,
   Nearest => "nearest",
