@@ -24,7 +24,7 @@ pub fn run() -> Result<()> {
     all_projects().into_iter().collect()
   };
 
-  let base_out_dir = Path::new("output/rust/");
+  let base_out_dir = Path::new("output/");
   for project in projects {
     let start = Instant::now();
     let (width, height) = project.resolution;
